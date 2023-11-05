@@ -4,6 +4,7 @@ import clsx from 'clsx';
 export default function InvoiceStatus({ status }: { status: string }) {
   return (
     <span
+    /** the clsx is a conditional controller for the css styles. */
       className={clsx(
         'inline-flex items-center rounded-full px-2 py-1 text-xs',
         {

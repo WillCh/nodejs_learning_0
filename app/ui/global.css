@@ -1,3 +1,5 @@
+/* this is the css style file whcih is imported by layout.tsx.*/
+/* tailwind is the util class for the css template, e.g. color. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
