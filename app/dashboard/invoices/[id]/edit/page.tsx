@@ -1,6 +1,7 @@
 import EditInvoiceForm from '@/app/ui/invoices/edit-form';
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
+import { notFound } from 'next/navigation';
 
 // it's similar to your /create invoice page, except it imports a
 // different form (from the edit-form.tsx file).
@@ -10,6 +11,9 @@ export default async function Page({ params }: { params: { id: string } }) {
         fetchInvoiceById(id),
         fetchCustomers(),
       ]);
+      if (!invoice) {
+        notFound();
+      }
   return (
     <main>
       <Breadcrumbs
